@@ -6,7 +6,6 @@ function FuncComp(props) {
 
   useEffect(() => {
     console.log('한번만 생성후 및 새로운 상태 componentDidMount');
-    document.title = number;
     return () => {
       console.log('사라지기 전 componentWillUnMount');
     };
@@ -14,7 +13,6 @@ function FuncComp(props) {
 
   useEffect(() => {
     console.log('number 생성후 및 새로운 상태');
-    document.title = number;
     return () => {
       console.log('number 사라지기 전');
     };
@@ -22,7 +20,6 @@ function FuncComp(props) {
 
   useEffect(() => {
     console.log('_date 생성후 및 새로운 상태');
-    document.title = _date;
     return () => {
       console.log('_date 사라지기 전');
     };
