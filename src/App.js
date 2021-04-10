@@ -1,23 +1,30 @@
-import logo from './logo.svg';
-import './App.css';
+import React from 'react';
+import { Route, Switch, Link } from 'react-router-dom';
+import Topics from './components/Params';
+import Home from './components/Home';
+import Funclass from './components/FuncClass';
 
 function App() {
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+    <div>
+      <h1>Hello React Router and Hook</h1>
+      <ul>
+        <li>
+          <Link to="/">홈</Link>
+        </li>
+        <li>
+          <Link to="/funcclass">useFunc</Link>
+        </li>
+        <li>
+          <Link to="/topics">useParams</Link>
+        </li>
+      </ul>
+      <Switch>
+        <Route exact path="/" component={Home} />
+        <Route path="/funcclass" component={Funclass} />
+        <Route path="/topics" component={Topics} />
+        <Route path="/">Not found</Route>
+      </Switch>
     </div>
   );
 }
